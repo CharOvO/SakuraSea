@@ -1,7 +1,87 @@
 /* 通配 */
 @font-face {
-    font-family: 'LXGW';
+    font-family: 'XLWK';
     src: url('../font/LXGWWenKai-Medium.ttf') format('truetype');
     font-weight: normal;
     font-display: swap;
+}
+@font-face {
+    font-family: 'MM';
+    src: url('../font/MapleMono-NF-CN-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-display: swap;
+}
+*{
+    font-family: MM;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color: #ff4f7d;
+}
+/* 顶栏 */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 48px;
+    background-color: #fafafacc;
+    backdrop-filter: blur(1em);
+    z-index: 5;
+}
+/* 导航栏 */
+.hdr-nav{
+    padding-left: 48px;
+    width: 500px;
+    /* background-color: aqua; */
+}
+/* 导航栏列表样式 */
+.hdr-nav ul {
+    list-style-type: none;
+}
+/* 一级菜单 */
+.hdr-nav-ul.sup{
+    height: 58px;
+    display: flex;
+    gap: 15px;
+}
+.hdr-nav-item.sup a, .hdr-nav-item.sup span{
+    line-height: 48px;
+    color: #333333;
+    /* color: #ff4f7d; */
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+/* 二级菜单 */
+.hdr-nav-ul.sub{
+    display: none;
+    position: fixed;
+    top: 55px;
+    background-color: #ffffffcc;
+    border-radius: 16px;
+    width: 300px;
+    height: 400px;
+    
+}
+.hdr-nav-item.sup:hover .hdr-nav-ul.sub{
+    display: block;
+}
+
+/* 三级菜单 */
+.hdr-nav-ul.sub-sub{
+    display: flex;
+}
+.hdr-logo img{
+    margin: 0 auto;
+    width: 30px;
+}
+.hdr-menu{
+    padding-right: 48px;
+    width: 500px;
+    /* background-color: aqua; */
+
 }
