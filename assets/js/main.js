@@ -19,4 +19,22 @@ if (document.getElementById('home')) {
         }
     });
 }
+// 遮罩
+const navItem = document.querySelectorAll('.hdr-nav-item.sup');
+const bodyShadow = document.querySelector('.body-shadow')
+navItem.forEach(item => {
+    item.addEventListener('mouseover', () => {
+        bodyShadow.classList.add('dspl');
+    });
+    item.addEventListener('mouseout', () => {
+        bodyShadow.classList.remove('dspl');
+    });
+});
+// bodyShadow.animate(
+//   [
+//     { opacity: 0, visibility: 'hidden' },
+//     { opacity: 1, visibility: 'visible' }
+//   ],
+//   { duration: 5000, fill: 'forwards' }
+// );
 
