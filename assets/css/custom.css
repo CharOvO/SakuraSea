@@ -238,10 +238,12 @@ body{
 /* 脚页 */
 .footer {
     display: flex;
+    width:100vw;
     justify-content: space-between;
     padding:24px 40px ;
     background-color: #fafafa;
     box-shadow: 0 -1px 10px #ffffff;
+        /* 包含 padding 和 border 在内的宽度计算 */
 }
 .footer .copyright,.footer .copyright a{
     font-size: 12px;
@@ -265,4 +267,9 @@ body{
 }
 .footer .power img{
     height: 20px;
+}
+
+.post-item{
+    margin: 10px;
+    background-color: aquamarine;
 }
