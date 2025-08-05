@@ -24,6 +24,14 @@ a{
 .iconfont{
 font-size: 1em;
 }
+body{
+    background-image: url(../img/home_bg.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
 /* 顶栏 */
 .header{
     display: flex;
@@ -226,4 +234,34 @@ font-size: 1em;
     display: block;
     opacity: 1;
     visibility: visible;
+}
+/* 脚页 */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding:24px 40px ;
+    background-color: #fafafa;
+}
+.footer .copyright,.footer .copyright a{
+    font-size: 12px;
+    color: #a4a4a4cc;
+}
+
+.footer .copyright a:hover{
+    color: #ff4f7d;
+}
+.footer .power a{
+    color: #666666;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 11px;
+    line-height: 20px;
+    filter: grayscale(1) opacity(0.5)}
+.footer .power a:hover{
+    filter: grayscale(0) opacity(1);
+    color: #81acd4;
+}
+.footer .power img{
+    height: 20px;
 }
