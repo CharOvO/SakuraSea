@@ -26,7 +26,7 @@
     <!-- 背景 -->
     <video autoplay muted loop playsinline id="bg-video">
         <!-- <source src="<?php echo (get_template_directory_uri() . '/assets/video/bg-video-01.mp4') ?>" type="video/mp4"> -->
-        <source src="https://sakura-sea.oss-cn-hangzhou.aliyuncs.com/video/bg/bg-video-01-1080p.mp4?Expires=1754573951&OSSAccessKeyId=TMP.3KmfT7Le2bcPRwsgzD4oAHyPke53eXhqxazRjLTjmcaM6cSh3mfXNHGf55mV3HzHetJCtUYQ4rvCWNK8SochLxT5e4tURP&Signature=QtYdb5u0JyXc%2B%2Bnz3wyD6em%2BAd8%3D" type="video/mp4">
+        <source src="https://cdn.sakura-sea.cn/video/bg/bg-video-01-1080p.mp4" type="video/mp4">
     </video>
     <header class="header">
         <!-- 导航栏 -->
