@@ -126,9 +126,9 @@
        
         <!-- logo -->
         <div class="hdr-logo">
-            <a href="<?php bloginfo('url') ?>"><img src="<?php echo(get_template_directory_uri().'/assets/img/logo.png') ?>" alt="logo"></a>
+            <a href="<?php bloginfo('url') ?>"><i class="iconfont icon-home-filling"></i><img src="<?php echo(get_template_directory_uri().'/assets/img/logo.png') ?>" alt="logo"></a>
             <!-- <a href="<?php bloginfo('url') ?>"><i class="iconfont icon-ziyuan"></i></a> -->
-           <i class="iconfont icon-home-filling"></i>
+           
         </div>
         <!-- menu -->
          <menu class="hdr-menu">
