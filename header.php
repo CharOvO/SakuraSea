@@ -26,7 +26,7 @@
     <!-- 背景 -->
     <video autoplay muted loop playsinline id="bg-video">
         <!-- <source src="<?php echo (get_template_directory_uri() . '/assets/video/bg-video-01.mp4') ?>" type="video/mp4"> -->
-        <source src="https://cdn.sakura-sea.cn/video/bg/bg-video-01-1080p.mp4" type="video/mp4">
+        <source src="https://cdn.sakura-sea.cn/video/bg/Bg-Video-01.webm" type="video/mp4">
     </video>
     <header class="header">
         <!-- 导航栏 -->

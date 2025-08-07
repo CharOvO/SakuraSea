@@ -1,4 +1,8 @@
 <?php get_header() ?>
+<!--  banner  -->
+  <div class="banner">
+    <div class="banner-title">SakuraSea</div>
+  </div>
 <!-- 文章列表 -->
 
 <div class="main-body">
