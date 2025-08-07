@@ -27,14 +27,26 @@ font-size: 1em;
 
 body{
     justify-content: center;
-    background-image: url(../img/home_bg.webp);
+    /* background-image: url(../img/home_bg.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     overflow-x: hidden;
 
 }
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 保持视频覆盖整个屏幕 */
+    z-index: -1;
+    /* 确保视频在内容后面 */
+}
+
 ::selection{
     background-color: #81acd4;
     color: white;

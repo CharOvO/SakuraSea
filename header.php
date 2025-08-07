@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo(get_template_directory_uri().'/assets/css/custom.css') ?>">
-    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4991188_mbjdlmjt53.css">
-    <script src="<?php echo(get_template_directory_uri().'/assets/js/main.js') ?>" type="module"></script>
+    <link rel="stylesheet" href="<?php echo (get_template_directory_uri() . '/assets/css/custom.css') ?>">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4991188_euiujofr1og.css">
+    <script src="<?php echo (get_template_directory_uri() . '/assets/js/main.js') ?>" type="module"></script>
     <title>
         <?php
-            if(is_home()){
-                // bloginfo('name');
-                echo('SakuraSea-');
-                bloginfo('description');
-            }elseif(is_single){
-                the_title();
-                echo('-');
-                bloginfo('name');
-            }
+        if (is_home()) {
+            // bloginfo('name');
+            echo ('SakuraSea-');
+            bloginfo('description');
+        } elseif (is_single()) {
+            the_title();
+            echo ('-');
+            bloginfo('name');
+        }
         ?>
     </title>
 </head>
+
 <body>
+    <!-- 背景 -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="<?php echo (get_template_directory_uri() . '/assets/video/bg-video-13.mp4') ?>" type="video/mp4">
+    </video>
     <header class="header">
         <!-- 导航栏 -->
         <div class="hdr-nav">
@@ -29,10 +35,10 @@
                     <span>开始浏览</span>
                     <!-- 二级菜单 -->
 
-                     <ul class="hdr-nav-ul sub">
+                    <ul class="hdr-nav-ul sub">
                         <li class="hdr-nav-item sub">
                             <a href="#"><i class="iconfont icon-template"></i>专题</a>
-                             <!-- 三级菜单 -->
+                            <!-- 三级菜单 -->
                             <ul class="hdr-nav-ul sub-sub">
                                 <li class="hdr-nav-item sub-sub"><a href="#">HTML</a></li>
                                 <li class="hdr-nav-item sub-sub"><a href="#">CSS</a></li>
@@ -50,7 +56,7 @@
                                 <li class="hdr-nav-item sub-sub"><a href="#">...</a></li>
                             </ul>
                         </li>
-                        
+
                         <li class="hdr-nav-item sub">
                             <a href="#"><i class="iconfont icon-lable"></i>标签</a>
                             <ul class="hdr-nav-ul sub-sub">
@@ -63,14 +69,14 @@
                         <li class="hdr-nav-item sub">
                             <a href="#"><i class="iconfont icon-one-stop-service"></i>归档</a>
                         </li>
-                     </ul>
+                    </ul>
                 </li>
                 <li class="hdr-nav-item sup">
                     <a href="">我的小窝</a>
                     <ul class="hdr-nav-ul sub">
                         <li class="hdr-nav-item sub">
                             <a href="#"><i class="iconfont icon-template"></i>专题</a>
-                             <!-- 三级菜单 -->
+                            <!-- 三级菜单 -->
                             <ul class="hdr-nav-ul sub-sub">
                                 <li class="hdr-nav-item sub-sub"><a href="#">HTML</a></li>
                                 <li class="hdr-nav-item sub-sub"><a href="#">CSS</a></li>
@@ -88,15 +94,15 @@
                                 <li class="hdr-nav-item sub-sub"><a href="#">...</a></li>
                             </ul>
                         </li>
-                        
-                     </ul>
+
+                    </ul>
                 </li>
                 <li class="hdr-nav-item sup">
                     <a href="">小工具</a>
                     <ul class="hdr-nav-ul sub">
                         <li class="hdr-nav-item sub">
                             <a href="#"><i class="iconfont icon-template"></i>专题</a>
-                             <!-- 三级菜单 -->
+                            <!-- 三级菜单 -->
                             <ul class="hdr-nav-ul sub-sub">
                                 <li class="hdr-nav-item sub-sub"><a href="#">HTML</a></li>
                                 <li class="hdr-nav-item sub-sub"><a href="#">CSS</a></li>
@@ -114,26 +120,25 @@
                                 <li class="hdr-nav-item sub-sub"><a href="#">...</a></li>
                             </ul>
                         </li>
-                        
-                     </ul>
+
+                    </ul>
                 </li>
                 <li class="hdr-nav-item sup"><a href="">友链</a></li>
                 <li class="hdr-nav-item sup"><a href="">关于</a></li>
-             
+
 
             </ul>
         </div>
-       
+
         <!-- logo -->
         <div class="hdr-logo">
-            <a href="<?php bloginfo('url') ?>"><i class="iconfont icon-home-filling"></i><img src="<?php echo(get_template_directory_uri().'/assets/img/logo.png') ?>" alt="logo"></a>
+            <a href="<?php bloginfo('url') ?>"><i class="iconfont icon-home-filling"></i><img src="<?php echo (get_template_directory_uri() . '/assets/img/logo.png') ?>" alt="logo"></a>
             <!-- <a href="<?php bloginfo('url') ?>"><i class="iconfont icon-ziyuan"></i></a> -->
-           
+
         </div>
         <!-- menu -->
-         <menu class="hdr-menu">
+        <menu class="hdr-menu">
 
-         </menu>
+        </menu>
     </header>
     <div class="body-shadow"></div>
-
