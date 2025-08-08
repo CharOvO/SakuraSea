@@ -18,10 +18,18 @@ while ( have_posts() ) :
     the_posts_pagination(array(
         'mid_size' => 4,
         'prev_text' => '<i class="iconfont icon-left-double-arrow"></i>',
-        'next_text' => '<i class="iconfont icon-right-double-arrow"></i>'
+        'next_text' => '<i class="iconfont icon-right-double-arrow"></i>',
+        'screen_reader_text' => ' ',
+        'aria_label' => '分页',
     ));
 ?>
     </div>
+
+
+
+
+
+    <!-- 测试 -->
     <div class="wrapper-l white">
         <pre>
 1. 基本模板函数
