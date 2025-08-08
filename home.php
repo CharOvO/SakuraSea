@@ -1,28 +1,30 @@
 <?php get_header() ?>
 <!--  banner  -->
-  <div class="banner">
+<div class="banner">
     <div class="banner-title">SakuraSea</div>
-  </div>
+    <i class="iconfont icon-down"></i>
+</div>
+
 <!-- 文章列表 -->
 
 <div class="main-body">
-    <div class="posts-list">      
-<?php 
-while ( have_posts() ) : 
-    the_post();
-    get_template_part('template-parts/posts');
-?>  
+    <div class="posts-list">
+        <?php
+        while (have_posts()) :
+            the_post();
+            get_template_part('template-parts/posts');
+        ?>
 
-<?php
-    endwhile; 
-    the_posts_pagination(array(
-        'mid_size' => 4,
-        'prev_text' => '<i class="iconfont icon-left-double-arrow"></i>',
-        'next_text' => '<i class="iconfont icon-right-double-arrow"></i>',
-        'screen_reader_text' => ' ',
-        'aria_label' => '分页',
-    ));
-?>
+        <?php
+        endwhile;
+        the_posts_pagination(array(
+            'mid_size' => 4,
+            'prev_text' => '<i class="iconfont icon-left-double-arrow"></i>',
+            'next_text' => '<i class="iconfont icon-right-double-arrow"></i>',
+            'screen_reader_text' => ' ',
+            'aria_label' => '分页',
+        ));
+        ?>
     </div>
 
 
@@ -256,7 +258,7 @@ print_r() - 打印易读变量信息
 
 
         </pre>
-        
+
     </div>
 </div>
 <?php get_footer() ?>

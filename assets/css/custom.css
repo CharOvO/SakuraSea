@@ -333,6 +333,23 @@ body{
     height: auto;
 
 }
+@keyframes shake{
+    0%,100%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+.banner i{
+     position: absolute;
+     bottom: 20px;
+     left: calc(50% - 19px);
+     font-size: 40px;
+     color: #ffffff;
+     text-shadow: 0 0 5px #ffffff;
+     animation: shake linear 2s infinite;
+}
 
 /* 主体 */
 .main-body{
