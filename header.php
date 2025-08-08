@@ -30,6 +30,24 @@
     </video>
     <header class="header">
         <!-- 导航栏 -->
+
+        <!-- 动态生成 -->
+        <?php
+            echo wp_nav_menu(array(
+            'container'            => 'div',
+            'container_class'      => 'hdr-nav',
+            'menu_class'           => 'hdr-nav-ul sup',
+            'echo'                 => true,
+            'fallback_cb'          => false,
+            'items_wrap'           => '<ul class="%2$s">%3$s</ul>',
+            'depth'                => 3,
+            'theme_location'       => 'header_menu',
+            ));
+        ?>
+
+
+
+        <!-- 静态生产 -->
         <div class="hdr-nav">
             <ul class="hdr-nav-ul sup">
                 <li class="hdr-nav-item sup">

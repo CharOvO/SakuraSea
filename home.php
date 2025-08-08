@@ -6,7 +6,6 @@
 </div>
 
 <!-- 文章列表 -->
-
 <div class="main-body">
     <div class="posts-list">
         <?php
@@ -22,7 +21,6 @@
             'prev_text' => '<i class="iconfont icon-left-double-arrow"></i>',
             'next_text' => '<i class="iconfont icon-right-double-arrow"></i>',
             'screen_reader_text' => ' ',
-            'aria_label' => '分页',
         ));
         ?>
     </div>
