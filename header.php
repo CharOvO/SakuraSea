@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>
+<head>  
+    <?php wp_head() ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo (get_template_directory_uri() . '/assets/css/custom.css') ?>">
-    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4991188_euiujofr1og.css">
-    <script src="<?php echo (get_template_directory_uri() . '/assets/js/main.js') ?>" type="module"></script>
+    <meta name="author" content="Char">
+    <meta name="description" content="<?php bloginfo('description')?>">
+  
     <title>
         <?php
-        if (is_home()) {
-            // bloginfo('name');
-            echo ('SakuraSea-');
-            bloginfo('description');
-        } elseif (is_single()) {
-            the_title();
-            echo ('-');
+        if (is_home() || is_front_page()) {
             bloginfo('name');
+            if(bloginfo('description')){
+                echo(' - ');
+                 bloginfo('description');
+            }
+        } elseif (is_single() || is_page()){
+            the_title();
+            echo (' - ');
+            bloginfo('name');
+        } elseif (is_tag() || is_tax()){
+            single_term_title();
+            echo(' - ');
+            bloginfo('nam');
+        }elseif(is_author()){
+            echo (get_the_author().'的个人主页');
         }
         ?>
     </title>
+    
 </head>
 
 <body>
@@ -28,12 +38,13 @@
         <!-- <source src="<?php echo (get_template_directory_uri() . '/assets/video/bg-video-01.mp4') ?>" type="video/mp4"> -->
         <source src="https://cdn.sakura-sea.cn/video/bg/Bg-Video-01.webm" type="video/mp4">
     </video>
+
     <header class="header">
         <!-- 导航栏 -->
 
         <!-- 动态生成 -->
         <?php
-            echo wp_nav_menu(array(
+            wp_nav_menu(array(
             'container'            => 'div',
             'container_class'      => 'hdr-nav',
             'menu_class'           => 'hdr-nav-ul sup',
@@ -41,10 +52,9 @@
             'fallback_cb'          => false,
             'items_wrap'           => '<ul class="%2$s">%3$s</ul>',
             'depth'                => 3,
-            'theme_location'       => 'header_menu',
+            'theme_location'       => 'primary',
             ));
         ?>
-
 
 
         <!-- 静态生产 -->
