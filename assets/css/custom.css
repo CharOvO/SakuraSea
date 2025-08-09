@@ -489,6 +489,7 @@ transform:scale(1.1);
     justify-content: center;
     align-content: center;
     width: 100%;
+    margin: 20px auto;
     
 }
 .screen-reader-text{
@@ -538,17 +539,20 @@ transform:scale(1.1);
 
 /* 测试 */
 .wrapper-l{
-    width:100%;
-    margin: 0 auto;
+    padding:10px;
+    gap: 15px;
+    width:90%;
+    margin: 50px auto 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 50px;
-    background-color: #ffffffcc;
+    /* margin-top: 50px; */
+    background-color: #ffffffbb;
     backdrop-filter: blur(1em);
     border-radius: 1em;
     box-shadow: 0 0 5px #ffffff;
 }
-pre{
+.wrapper-l .iconfont{
     text-align: center;
+    font-size: 1.2em;
 }
