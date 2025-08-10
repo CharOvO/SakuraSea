@@ -1,38 +1,51 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package SakuraSea
+ */
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>  
-    <?php wp_head() ?>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Char">
-    <meta name="description" content="<?php bloginfo('description')?>">
-  
+    <meta name="description" content="<?php bloginfo('description') ?>">
+    <?php wp_head() ?>
     <title>
         <?php
         if (is_home() || is_front_page()) {
             bloginfo('name');
-            if(bloginfo('description')){
-                echo(' - ');
-                 bloginfo('description');
+            if (bloginfo('description')) {
+                echo (' - ');
+                bloginfo('description');
             }
-        } elseif (is_single() || is_page()){
+        } elseif (is_single() || is_page()) {
             the_title();
             echo (' - ');
             bloginfo('name');
-        } elseif (is_tag() || is_tax()){
+        } elseif (is_tag() || is_tax()) {
             single_term_title();
-            echo(' - ');
+            echo (' - ');
             bloginfo('nam');
-        }elseif(is_author()){
-            echo (get_the_author().'的个人主页');
+        } elseif (is_author()) {
+            echo (get_the_author() . '的个人主页');
         }
         ?>
     </title>
-    
 </head>
 
-<body>
+<body <?php body_class() ?>>
+
+    <?php wp_body_open() ?>
+    
+
     <!-- 背景 -->
     <video autoplay muted loop playsinline id="bg-video">
         <!-- <source src="<?php echo (get_template_directory_uri() . '/assets/video/bg-video-01.mp4') ?>" type="video/mp4"> -->
@@ -44,7 +57,7 @@
 
         <!-- 动态生成 -->
         <?php
-            wp_nav_menu(array(
+        wp_nav_menu(array(
             'container'            => 'div',
             'container_class'      => 'hdr-nav',
             'menu_class'           => 'hdr-nav-ul sup',
@@ -53,7 +66,7 @@
             'items_wrap'           => '<ul class="%2$s">%3$s</ul>',
             'depth'                => 3,
             'theme_location'       => 'primary',
-            ));
+        ));
         ?>
 
 

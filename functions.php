@@ -1,9 +1,16 @@
 <?php
-/** */
+/**
+ * SakuraSea functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package SakuraSea
+ */
+
 // 载入主题 
 add_filter('show_admin_bar','__return_false');// 取消工具栏
-add_action('after_setup_theme','skr_setup_theme');
-function skr_setup_theme(){
+add_action('after_setup_theme','skr_setup');
+function skr_setup(){
     // 主题功能
     // 注册菜单
     register_nav_menus(array(

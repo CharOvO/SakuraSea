@@ -1,28 +1,32 @@
+/**
+* The front-page for our theme
+*
+* @package SakuraSea
+* @author Char
+*/
 <?php get_header() ?>
 <!--  banner  -->
 <div class="banner">
     <div class="banner-title">SakuraSea</div>
     <i class="iconfont icon-down"></i>
 </div>
- <!-- 测试 -->
-    <div class="wrapper-l white">
-        <div style="font-size: 2em; color:#81acd4;width:100%;text-align:center;">TODO</div>
-        <i class="iconfont icon-confirm">hooks排队加载CSS/JS</i>
-        <i class="iconfont icon-edit">背景切换模块</i>
-        <i class="iconfont icon-edit">通知条</i>
-        <i class="iconfont icon-edit">动态菜单栏</i>
-        <i class="iconfont icon-edit">搜索表单</i>
-        <i class="iconfont icon-edit">用户菜单</i>
-        <i class="iconfont icon-edit">分类栏</i>
-        <i class="iconfont icon-edit">侧边栏</i>
 
-    </div>
+<!-- TODO -->
+<div class="wrapper-l white">
+    <div style="font-size: 2em; color:#81acd4;width:100%;text-align:center;">TODO</div>
+    <i class="iconfont icon-confirm">hooks排队加载CSS/JS</i>
+    <i class="iconfont icon-edit">页面结构标准化🙃让我去死算了</i>
+    <i class="iconfont icon-edit">背景切换模块</i>
+    <i class="iconfont icon-edit">通知条</i>
+    <i class="iconfont icon-edit">动态菜单栏</i>
+    <i class="iconfont icon-edit">搜索表单</i>
+    <i class="iconfont icon-edit">用户菜单</i>
+    <i class="iconfont icon-edit">分类栏</i>
+    <i class="iconfont icon-edit">侧边栏</i>
+</div>
 
 <!-- 文章列表 -->
 <div class="main-body">
-   
-
-
     <div class="posts-list">
         <?php
         while (have_posts()) :
