@@ -7,16 +7,23 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package SakuraSea
+ * 
+ * TODO:
+ * 1.menu
+ * 
  */
+
+
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Char">
-    <meta name="description" content="<?php bloginfo('description') ?>">
+    <?php if(bloginfo('description')): ?>
+            <meta name="description" content="<?php bloginfo('description') ?>">
+    <?php endif ?>
     <?php wp_head() ?>
     <title>
         <?php
@@ -41,16 +48,16 @@
     </title>
 </head>
 
-<body <?php body_class() ?>>
-
-    <?php wp_body_open() ?>
+<body>
     
-
     <!-- 背景 -->
-    <video autoplay muted loop playsinline id="bg-video">
-        <!-- <source src="<?php echo (get_template_directory_uri() . '/assets/video/bg-video-01.mp4') ?>" type="video/mp4"> -->
-        <source src="https://cdn.sakura-sea.cn/video/bg/Bg-Video-01.webm" type="video/mp4">
-    </video>
+     <?php if(! is_single()): ?>
+        <video autoplay muted loop playsinline id="bg-video">
+            <!-- <source src="<?php echo (get_template_directory_uri() . '/assets/video/bg-video-01.mp4') ?>" type="video/mp4"> -->
+            <source src="https://cdn.sakura-sea.cn/video/bg/Bg-Video-01.webm" type="video/mp4">
+        </video>
+    <?php endif ?>
+    
 
     <header class="header">
         <!-- 导航栏 -->
@@ -180,7 +187,25 @@
         </div>
         <!-- menu -->
         <menu class="hdr-menu">
-
+            <?php 
+                wp_nav_menu(array(
+                'container'            => 'div',
+                'container_class'      => 'user-menu',
+                'menu_class'           => 'user-menu-ul sup',
+                'echo'                 => true,
+                'fallback_cb'          => false,
+                // 'before'               => '',
+                // 'after'                => '',
+                'link_before'          => '<i ></i>',
+                // 'link_after'           => '',
+                'items_wrap'           => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'item_spacing'         => 'preserve',
+                'depth'                => 3,
+                // 'walker'               => '',
+                'theme_location'       => 'user',
+                ));
+            ?>
         </menu>
     </header>
+    <!-- 菜单背景 -->
     <div class="body-shadow"></div>
