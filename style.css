@@ -6,3 +6,85 @@
 *Description: 🌸一款轻量但功能丰富,自定义程度极高的主题🌸
 *Version: 1.0.1
 */
+
+/* ====自定义属性====*/
+:root{
+    /* 主题色 */
+    --primary-color: #81acd4;
+    --color-white: #ffffff;
+    /* 文字颜色 */
+    --font-color: #333333;
+    --font-color-h1: #ffffffe6;
+    /* 字体大小 */
+    --font-size-h1: 2rem;
+    --font-size-h2: 1.8rem;
+    --font-size-h3: 1.6rem;
+    --font-size-h4: 1.4rem;
+    --font-size-h5: 1.2rem;
+    --font-size-h6: 1em;
+    /* 字体粗细 */
+    --font-weight-bold: 700;
+    --font-weight-semi-bold: 600;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+}
+/* ====通用样式====*/
+/* 字体 */
+@font-face {
+    font-family: 'XLWK';
+    src: url('../font/LXGWWenKai-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MM';
+    src: url('../font/MapleMono-NF-CN-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-display: swap;
+}
+/*初始化*/
+html{
+    font-family: MM;
+    line-height: 1.15;/*根据字体大小自动调整行高*/
+    -webkit-text-size-adjust: 100%;/*防止移动端横屏时的布局错乱*/
+    transition: all 0.3s;
+}
+body{
+    margin: 0;/*移出浏览器默认样式*/
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    color: var(--font-color-h1);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+}
+h2{
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-semi-bold);
+}
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-medium);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-medium);
+}
+
+h5 {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-normal);
+}
+
+h6 {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-normal);
+}
+h2,h3,h4,h5,h6 {    
+    color: var(--font-color);
+    margin-top: 1em;
+    margin-bottom: .5em;
+}

@@ -12,6 +12,7 @@
     font-display: swap;
 }
 *{
+    
     font-family: MM;
     margin: 0px;
     padding: 0px;
@@ -19,7 +20,7 @@
 }
 a{
     text-decoration: none;
-    color: #ff4f7d;
+    /* color: #ff4f7d; */
 }
 .iconfont{
 font-size: 1em;
@@ -35,6 +36,11 @@ body{
     overflow-x: hidden;
 
 }
+.container{
+    margin-top: 48px;
+    min-height: calc(100vh - 48px - 68px);
+}
+
 #bg-video {
     position: fixed;
     top: 0;
@@ -268,6 +274,7 @@ body{
         /* 包含 padding 和 border 在内的宽度计算 */
 }
 .footer .copyright,.footer .copyright a{
+    line-height: 20px;
     font-size: 12px;
     color: #a4a4a4cc;
 }
@@ -275,11 +282,11 @@ body{
 .footer .copyright a:hover{
     color: #ff4f7d;
 }
-.footer .power{
+.footer .icp-box{
     display: flex;
     gap: 15px;
 }
-.footer .power a{
+.footer .icp-box a{
     color: #666666;
     display: flex;
     justify-content: center;
@@ -288,19 +295,21 @@ body{
     line-height: 20px;
     filter: grayscale(1) opacity(0.5)}
     /* 默认样式 */
-.footer .power a:hover{
+.footer .icp-box a:hover{
     filter: grayscale(0) opacity(1);
     color: #81acd4;
 }
     /* 公安备案样式 */
-.footer .power .bean:hover {
+.footer .icp-box .bean:hover {
     filter: grayscale(0) opacity(1);
     color: rgb(60, 119, 229);
 }
-.footer .power img{
+.footer .icp-box img{
     padding-right: 2px;
     height: 20px;
 }
+
+
 /* banner */
 .banner{
     width: 100vw;
@@ -530,11 +539,6 @@ transform:scale(1.1);
     color: #ffffff;
     font-size: 18px;
 }
-
-
-
-
-
 
 
 /* 测试 */
