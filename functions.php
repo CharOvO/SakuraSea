@@ -7,8 +7,10 @@
  * @package SakuraSea
  */
 
-// 载入主题 
-add_filter('show_admin_bar','__return_false');// 取消工具栏
+//=================
+//初始化主题 
+//=================
+
 add_action('after_setup_theme','skr_setup');
 function skr_setup(){
     // 主题功能
@@ -20,12 +22,22 @@ function skr_setup(){
     ));
 }
 
-//资源加载
+//=================
+//前端样式和脚本
+//=================
+
 add_action('wp_enqueue_scripts', 'skr_resource');
 function skr_resource()
 {
 
     // 1. 加载CSS文件
+    wp_enqueue_style(
+        'skr-style',
+        get_stylesheet_uri(),
+        array(),
+        false,
+        'all'
+    );
     wp_enqueue_style(
         'skr-custom', // 添加前缀避免冲突
         get_theme_file_uri('/assets/css/custom.css'),
@@ -52,5 +64,32 @@ function skr_resource()
         true // 在页脚加载
     );
 }
+
+//=================
+//主题选项刷新
+//=================
+
+add_action('update_option','skr_update_option',10,3);
+function skr_update_option($option_name,$old_value,$new_value){
+
+}
+
+//=================
+//自定义信息获取
+//=================
+
+function skr_get_icp_number($icpinfo){
+    preg_match('/\d+/',$icpinfo, $icpNumber);
+    echo($icpNumber[0]);
+}
+
+//=================
+//个性化设置
+//=================
+
+// 取消工具栏
+add_filter('show_admin_bar', '__return_false'); 
+
+
 
 ?>

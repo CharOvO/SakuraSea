@@ -1,9 +1,11 @@
+<?php 
 /**
 * The front-page for our theme
 *
 * @package SakuraSea
 * @author Char
 */
+?>
 <?php get_header() ?>
 <!--  banner  -->
 <div class="banner">
