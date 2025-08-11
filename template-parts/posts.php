@@ -25,7 +25,7 @@ $final_thumbnail = $thumbnail_url ? $thumbnail_url : $default_thumbnail;
         <div class="post-title">『<?php the_title(); ?>』</div>
         <!-- <div class="post-description"><?php the_excerpt(); ?></div> -->
         <div class="post-meta-info">
-            <time class="meta-time" datetime="<?php echo get_the_date('c'); ?>"><i class="iconfont icon-calendar"></i><?php the_time('Y-m-d'); ?></time>
+            <time class="meta-time" datetime="<?php echo get_the_date('c'); ?>"><i class="iconfont icon-calendar"></i><?php skr_the_time('Y-m-d'); ?></time>
             <div class="h-line"></div>
             <div class="meta-author"><i class="iconfont icon-user"></i><?php the_author(); ?></div>
             <a href="<?php the_permalink(); ?>" class="read-details" aria-label="查看详细"><i class="iconfont icon-view-fill"></i></a>

@@ -84,12 +84,31 @@ add_filter('show_admin_bar', '__return_false');
 //主题数据处理
 //=================
 // 公安备案数字获取
-function skr_the_icp_number($icpinfo){
+function skr_get_the_icp_number($icpinfo){
     preg_match('/\d+/',$icpinfo, $icpNumber);
-    echo esc_html(($icpNumber[0])) ;
+    return esc_html(($icpNumber[0])) ;
 }
 // 时间分段显示
-// function skr_
-
-
+function skr_get_the_time(){
+    $pubTime =get_the_time('U');
+    $currTime = current_time('U');//获取当前时间戳
+    $timeDiff = $currTime - $pubTime;
+    if($timeDiff < 60){
+        $displayTime = '刚刚';//小于60s
+    }elseif($timeDiff < 60*60){
+        $displayTime = floor(($timeDiff/60)).'分钟前';//小于60分钟
+    }elseif($timeDiff < 24*60*60){
+        $displayTime = floor(($timeDiff/60/60)).'小时前';//小于24小时
+    }elseif($timeDiff < 30*24*60*60){
+        $displayTime = floor(($timeDiff/24/60/60)).'日前';//小于30天
+    }elseif($timeDiff < 365*24*60*60){
+        $displayTime = date('m-d',$pubTime);//小于一年
+    }else{
+        $displayTime = date('Y-m-d',$pubTime);
+    }
+    return esc_html($displayTime);
+}
+function skr_the_time(){
+    echo skr_get_the_time();
+}
 ?>
