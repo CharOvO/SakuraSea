@@ -75,21 +75,21 @@ function skr_update_option($option_name,$old_value,$new_value){
 }
 
 //=================
-//自定义信息获取
-//=================
-
-function skr_get_icp_number($icpinfo){
-    preg_match('/\d+/',$icpinfo, $icpNumber);
-    echo($icpNumber[0]);
-}
-
-//=================
 //个性化设置
 //=================
-
 // 取消工具栏
 add_filter('show_admin_bar', '__return_false'); 
 
+//=================
+//主题数据处理
+//=================
+// 公安备案数字获取
+function skr_the_icp_number($icpinfo){
+    preg_match('/\d+/',$icpinfo, $icpNumber);
+    echo esc_html(($icpNumber[0])) ;
+}
+// 时间分段显示
+// function skr_
 
 
 ?>
