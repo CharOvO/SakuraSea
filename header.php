@@ -51,11 +51,14 @@
 <body>
     
     <!-- 背景 -->
-     <?php if(/*! is_single()*/ true): ?>
-        <video autoplay muted loop playsinline id="bg-video">
-            <!-- <source src="<?php echo (get_template_directory_uri() . '/assets/video/bg-video-01.mp4') ?>" type="video/mp4"> -->
+     <?php if(! is_single()): ?>
+        <video autoplay muted loop playsinline class="site-bg video-bg">
             <source src="https://cdn.sakura-sea.cn/video/bg/Bg-Video-01.webm" type="video/mp4">
         </video>
+    <?php elseif(has_post_thumbnail()): ?>
+        <img src="<?php echo esc_url(get_the_post_thumbnail_url()) ?>" class="site-bg img-bg">
+    <?php else: ?>
+        <img src="<?php echo esc_url(get_theme_file_uri().'/assets/img/default-bg.png') ?>" class="site-bg img-bg">
     <?php endif ?>
     
 
