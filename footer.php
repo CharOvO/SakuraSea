@@ -30,7 +30,7 @@ $icpInfo = array(
         <!-- 备案信息 -->
         <div class="icp-box">
             <a class="icp" href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_block"><img src="<?php echo(get_theme_file_uri().'/assets/img/icp.webp') ?>" alt="ICP备案"><?php echo $icpInfo[0] ?></a>
-            <a class="bean" href="https://beian.mps.gov.cn/#/query/webSearch?code=<?php skr_the_icp_number($icpInfo[1]) ?>" rel="noreferrer" target="_blank"><img src="<?php echo(get_theme_file_uri().'/assets/img/bean.png') ?>" alt="公安备案"><?php echo $icpInfo[1] ?></a>
+            <a class="bean" href="https://beian.mps.gov.cn/#/query/webSearch?code=<?php echo esc_html(skr_get_the_icp_number($icpInfo[1])) ?>" rel="noreferrer" target="_blank"><img src="<?php echo(get_theme_file_uri().'/assets/img/bean.png') ?>" alt="公安备案"><?php echo $icpInfo[1] ?></a>
         </div>
     </footer>
 </body>

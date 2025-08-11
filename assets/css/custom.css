@@ -41,7 +41,7 @@ body{
     min-height: calc(100vh - 48px - 68px);
 }
 
-#bg-video {
+.site-bg {
     position: fixed;
     top: 0;
     left: 0;
