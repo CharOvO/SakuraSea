@@ -21,7 +21,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Char">
-    <?php if(bloginfo('description')): ?>
+    <?php if(!empty(get_bloginfo('description'))): ?>
             <meta name="description" content="<?php bloginfo('description') ?>">
     <?php endif ?>
     <?php wp_head() ?>
@@ -29,7 +29,7 @@
         <?php
         if (is_home() || is_front_page()) {
             bloginfo('name');
-            if (bloginfo('description')) {
+            if (!empty(get_bloginfo('description'))) {
                 echo (' - ');
                 bloginfo('description');
             }
