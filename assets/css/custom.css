@@ -1,41 +1,12 @@
 /* 通配 */
-@font-face {
-    font-family: 'XLWK';
-    src: url('../font/LXGWWenKai-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'MM';
-    src: url('../font/MapleMono-NF-CN-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-display: swap;
-}
-*{
-    
-    font-family: MM;
-    margin: 0px;
-    padding: 0px;
-    transition: all 0.3s;
-}
-a{
-    text-decoration: none;
-    /* color: #ff4f7d; */
-}
+
+
+
 .iconfont{
 font-size: 1em;
 }
 
-body{
-    justify-content: center;
-    /* background-image: url(../img/home_bg.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
-    overflow-x: hidden;
 
-}
 .container{
     margin-top: 48px;
     min-height: calc(100vh - 48px - 68px);

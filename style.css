@@ -14,7 +14,9 @@
     --color-white: #ffffff;
     /* 文字颜色 */
     --font-color: #333333;
-    --font-color-h1: #ffffffe6;
+    --font-color-title: #ffffffe6;
+    --font-color-link: #81acd4;
+    --font-color-link-hover: #b2cee7cc;
     /* 字体大小 */
     --font-size-h1: 2rem;
     --font-size-h2: 1.8rem;
@@ -27,38 +29,48 @@
     --font-weight-semi-bold: 600;
     --font-weight-medium: 500;
     --font-weight-normal: 400;
+    /*毛玻璃 */
 }
 /* ====通用样式====*/
 /* 字体 */
 @font-face {
     font-family: 'XLWK';
-    src: url('../font/LXGWWenKai-Medium.ttf') format('truetype');
+    src: url('assets/font/LXGWWenKai-Medium.ttf') format('truetype');
     font-weight: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'MM';
-    src: url('../font/MapleMono-NF-CN-Medium.ttf') format('truetype');
+    src: url('assets/font/MapleMono-NF-CN-Medium.ttf') format('truetype');
     font-weight: normal;
     font-display: swap;
 }
 /*初始化*/
+* {
+    margin: 0px;
+    padding: 0px;
+    transition: all 0.3s;/*默认动画效果*/
+}
 html{
     font-family: MM;
     line-height: 1.15;/*根据字体大小自动调整行高*/
     -webkit-text-size-adjust: 100%;/*防止移动端横屏时的布局错乱*/
-    transition: all 0.3s;
 }
 body{
-    margin: 0;/*移出浏览器默认样式*/
+    overflow-x: hidden;
 }
+/* 标题 */
 
 h1 {
     font-size: var(--font-size-h1);
-    color: var(--font-color-h1);
+    color: var(--font-color-title);
     font-weight: var(--font-weight-bold);
     text-align: center;
+}
+article h1{
+    color: var(--font-color);
+    text-align: start;
 }
 h2{
     font-size: var(--font-size-h2);
@@ -88,3 +100,30 @@ h2,h3,h4,h5,h6 {
     margin-top: .9em;
     margin-bottom: .4em;
 }
+a{
+    position: relative;
+        text-decoration: none;
+        color: var(--font-color-link);
+}
+a:hover{
+    color: var(--font-color-link);
+}
+ main a::after{
+    content: "";
+        position: absolute;
+        left: 0;
+        bottom: 25%;/* 距离文字底部5px */
+        width: 100%;
+        height: 50%;
+        background: var(--font-color-link-hover);
+        filter: blur(5px);
+        transform: scaleX(0);/* 初始宽度为0 */
+        transform-origin: right;/* 悬停时从左向右展开 */
+        transition: transform 0.5s ease;
+        border-radius: 40%;
+        z-index: -1;
+ }
+ main a:hover::after{
+    transform: scaleX(1); /* 悬停时完全展开 */
+    transform-origin: left; /* 移出时从右向左收缩 */
+ }
