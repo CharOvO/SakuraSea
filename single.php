@@ -6,17 +6,23 @@
  *
  * @package SakuraSea
  */
+
+use function PHPSTORM_META\type;
+
  get_header();
 ?>
 
- <div class="container">
-    <br>
-    <!-- 测试 -->
-    <?php for($i = 1; $i <= 6; $i++):?>   
-        <h<?php echo $i ?>>这是<?php echo $i ?>级标题</h<?php echo $i ?>> 
-    <?php endfor ?>
- </div>
+<main class="container">
+    <!-- 文章内容 -->
+    <?php while(have_posts()) {
+        the_post();
+        get_template_part('template-parts/content');
+    }
+    ?>
 
+</main>
+
+ <br>
 
 
 <?php 
