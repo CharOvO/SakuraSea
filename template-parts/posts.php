@@ -15,20 +15,20 @@ $default_thumbnail = get_template_directory_uri() . '/assets/img/logo.png'; // �
 $final_thumbnail = $thumbnail_url ? $thumbnail_url : $default_thumbnail;
 ?>
 
-<div <?php post_class('post-item'); ?>>
-    <div class="post-cover">
+<div <?php post_class('post-item list'); ?>>
+    <div class="post-cover list">
         <img src="<?php echo esc_url($final_thumbnail); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy" />
-        <div class="cover-shadow"></div>
+        <div class="cover-shadow list"></div>
     </div>
 
-    <div class="post-meta">
-        <div class="post-title">『<?php the_title(); ?>』</div>
+    <div class="post-meta list">
+        <div class="post-title list">『<?php the_title(); ?>』</div>
         <!-- <div class="post-description"><?php the_excerpt(); ?></div> -->
-        <div class="post-meta-info">
-            <time class="meta-time" datetime="<?php echo get_the_date('c'); ?>"><i class="iconfont icon-calendar"></i><?php skr_the_time('Y-m-d'); ?></time>
-            <div class="h-line"></div>
-            <div class="meta-author"><i class="iconfont icon-user"></i><?php the_author(); ?></div>
-            <a href="<?php the_permalink(); ?>" class="read-details" aria-label="查看详细"><i class="iconfont icon-view-fill"></i></a>
+        <div class="post-meta-info list">
+            <time class="meta-time list" datetime="<?php echo get_the_date('c'); ?>"><i class="iconfont icon-calendar"></i><?php skr_the_time('Y-m-d'); ?></time>
+            <div class="h-line list"></div>
+            <div class="meta-author list"><i class="iconfont icon-user"></i><?php the_author(); ?></div>
+            <a href="<?php the_permalink(); ?>" class="read-details list" aria-label="查看详细"><i class="iconfont icon-view-fill"></i></a>
         </div>
 
     </div>

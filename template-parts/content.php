@@ -9,27 +9,30 @@
  */
 ?>
 <!-- 头部 -->
-<header class="post-header">
-    <hgroup class="post-info">
-        <h1><?php the_title() ?></h1>
+<header class="post-header single">
+    <hgroup class="post-info single">
+        <h1 class="post-title single"><?php the_title() ?></h1>
         <!-- 分类列表 -->
-        <ul class="post-category">
+        <ul class="post-categories single">
             <i class="iconfont icon-all"></i>
             <?php the_category(' ') ?>
         </ul>
         <!-- 标签列表 -->
-        <ul class="post-tags">
+        <ul class="post-tags single">
             <i class="iconfont icon-file-common"></i>
             <?php the_tags('', ' ') ?>
         </ul>
         <!-- 元数据 -->
-        <ul class="post-meta">
-            <li class="meta-author"><?php the_author_posts_link() ?></li>
-            <li class="meta-time"><time datetime="<?php echo esc_html(get_the_date('c')) ?>"><?php skr_the_time() ?></time></li>
-            <!-- 热度 -->
-        </ul>
-        <!-- 分享 -->
-        <button id="share-btn" class="meta-button share" title="分享这篇文章"><i class="iconfont icon-fenxiang"></i></button>
+        <div class="post-meta-box single">
+            <ul class="post-meta single">
+                <li class="meta-author single"><?php the_author_posts_link() ?></li>
+                <li class="meta-time single"><time datetime="<?php echo esc_html(get_the_date('c')) ?>"><?php skr_the_time() ?></time></li>
+            </ul>
+            <!-- 字数/热度/阅读时间 -->
+            <!-- 分享 -->
+        <button id="share-btn" class="meta-button share single" title="分享这篇文章"><i class="iconfont icon-fenxiang"></i></button>
+        </div>
+        
     </hgroup>
 </header>
 <!-- 内容 -->
