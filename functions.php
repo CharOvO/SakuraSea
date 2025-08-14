@@ -21,6 +21,10 @@ function skr_setup(){
         'user' => '用户菜单'
     ));
 }
+//=================
+//主题功能支持
+//=================
+add_theme_support('post-thumbnails');//支持文章封面Post Cover
 
 //=================
 //前端样式和脚本
@@ -44,6 +48,13 @@ function skr_resource()
         array(), // 无依赖
         false, // 版本控制
         'all' // 媒体类型
+    );
+    wp_enqueue_style(
+        'akr-content',
+        get_theme_file_uri('/assets/css/single.css'),
+        array(),
+        false,
+        'all'
     );
 
     // 2. 加载ICON FONT（CDN资源）
