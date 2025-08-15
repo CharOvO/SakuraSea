@@ -60,7 +60,7 @@ function skr_resource()
     // 2. 加载ICON FONT（CDN资源）
     wp_enqueue_style(
         'skr-icon-font',
-        'https://at.alicdn.com/t/c/font_4991188_euiujofr1og.css',
+        'https://at.alicdn.com/t/c/font_4991188_euotjdxwssc.css',
         array(),
         null, // CDN资源不适用版本控制
         'all'

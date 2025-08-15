@@ -14,10 +14,22 @@
     --color-white: #ffffff;
     /* 文字颜色 */
     --font-color: #333333;
+    --font-color-city: #a5a5a5;
     --font-color-title: #ffffffe6;
+    --font-color-post-mate: #ffffffe6;
     --font-color-link: #81acd4;
     --font-color-link-hover: #b2cee7cc;
+    --font-color-strong: #628fba;
+    /* 背景 */
+    --bg-color-white: #fafafa;
+    --bg-color-blur-white-cc: #ffffffe0;/* 模糊 */
+    --bg-color-white-de: #ffffffde;
+    --bg-color-white-99: #ffffff75;
+    /* 阴影 */
+    border: 1px solid var(--border-color-blur);
+    --box-shadow: #00000037;
     /* 字体大小 */
+    --font-size-title: 3rem;
     --font-size-h1: 2rem;
     --font-size-h2: 1.8rem;
     --font-size-h3: 1.6rem;
@@ -29,7 +41,13 @@
     --font-weight-semi-bold: 600;
     --font-weight-medium: 500;
     --font-weight-normal: 400;
-    /*毛玻璃 */
+    /* 描边 */
+    --border-color-blur: rgba(114, 114, 114, 0.3);
+    /* 圆角 */
+    --border-rad-s: .3em;
+    --border-rad-m: .6em;
+    --border-rad-l: 1em;
+
 }
 /* ====通用样式====*/
 /* 字体 */
@@ -60,32 +78,30 @@ html{
 body{
     overflow-x: hidden;
 }
-/* 标题 */
-
-h1 {
-    font-size: var(--font-size-h1);
-    color: var(--font-color-title);
-    font-weight: var(--font-weight-bold);
-    text-align: center;
+/* 标题及其计数器 */
+article{
+    counter-reset: h1;/*初始化h1计数器*/
 }
-article h1{
+/* 标题 */
+h1{
+    font-size: var(--font-size-h1);
     color: var(--font-color);
     text-align: start;
+    counter-reset: h2;
 }
-h2{
+h2 {
     font-size: var(--font-size-h2);
     font-weight: var(--font-weight-semi-bold);
+    counter-reset: h3;
 }
 h3 {
     font-size: var(--font-size-h3);
     font-weight: var(--font-weight-medium);
 }
-
 h4 {
     font-size: var(--font-size-h4);
     font-weight: var(--font-weight-medium);
 }
-
 h5 {
     font-size: var(--font-size-h5);
     font-weight: var(--font-weight-normal);
@@ -95,10 +111,11 @@ h6 {
     font-size: var(--font-size-h6);
     font-weight: var(--font-weight-normal);
 }
-h2,h3,h4,h5,h6 {    
+
+h1,h2,h3,h4,h5,h6 {    
     color: var(--font-color);
-    margin-top: .9em;
-    margin-bottom: .4em;
+    margin-top: .8em;
+    margin-bottom: .3em;
 }
 a{
     position: relative;
@@ -107,8 +124,9 @@ a{
 }
 a:hover{
     color: var(--font-color-link);
-}
- main a::after{
+} 
+/* 主体超链接样式 */
+ main a::before{
     content: "";
         position: absolute;
         left: 0;
@@ -123,7 +141,7 @@ a:hover{
         border-radius: 40%;
         z-index: -1;
  }
- main a:hover::after{
+ main a:hover::before{
     transform: scaleX(1); /* 悬停时完全展开 */
     transform-origin: left; /* 移出时从右向左收缩 */
  }
