@@ -57,14 +57,14 @@
 /* 字体 */
 @font-face {
     font-family: 'XLWK';
-    src: url('assets/font/LXGWWenKai-Medium.ttf') format('truetype');
+    src: url('https://cdn.sakura-sea.cn/font/LXGWWenKai-Medium.ttf') format('truetype');
     font-weight: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'MM';
-    src: url('assets/font/MapleMono-NF-CN-Medium.ttf') format('truetype');
+    src: url('https://cdn.sakura-sea.cn/font/MapleMono-NF-CN-Medium.ttf') format('truetype');
     font-weight: normal;
     font-display: swap;
 }
