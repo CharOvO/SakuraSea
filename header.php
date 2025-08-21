@@ -53,7 +53,7 @@
     <!-- 背景 -->
      <?php if(! is_single()): ?>
         <video autoplay muted loop playsinline class="site-bg video-bg">
-            <source src="https://cdn.sakura-sea.cn/video/bg/Bg-Video-01.webm" type="video/mp4">
+            <source src="https://cdn.sakura-sea.cn/video/bg/Bg-Video-03.webm" type="video/mp4">
         </video>
     <?php elseif(has_post_thumbnail()): ?>
         <img src="<?php echo esc_url(get_the_post_thumbnail_url()) ?>" class="site-bg img-bg">
