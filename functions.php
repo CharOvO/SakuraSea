@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SakuraSea functions and definitions
  *
@@ -11,8 +12,9 @@
 //初始化主题 
 //=================
 
-add_action('after_setup_theme','skr_setup');
-function skr_setup(){
+add_action('after_setup_theme', 'skr_setup');
+function skr_setup()
+{
     // 主题功能
     // 注册菜单
     register_nav_menus(array(
@@ -24,7 +26,7 @@ function skr_setup(){
 //=================
 //主题功能支持
 //=================
-add_theme_support('post-thumbnails');//支持文章封面Post Cover
+add_theme_support('post-thumbnails'); //支持文章封面Post Cover
 
 //=================
 //前端样式和脚本
@@ -56,11 +58,25 @@ function skr_resource()
         false,
         'all'
     );
+    wp_enqueue_style(
+        'skr-front-page',
+        get_theme_file_uri('/assets/css/front-page.css'),
+        array(),
+        false,
+        'all'
+    );
+    wp_enqueue_style(
+        'skr-sidebar',
+        get_theme_file_uri('/assets/css/sidebar.css'),
+        array(),
+        false,
+        'all'
+    );
 
     // 2. 加载ICON FONT（CDN资源）
     wp_enqueue_style(
         'skr-icon-font',
-        'https://at.alicdn.com/t/c/font_4991188_euotjdxwssc.css',
+        'https://at.alicdn.com/t/c/font_4991188_f67xyxwttnm.css',
         array(),
         null, // CDN资源不适用版本控制
         'all'
@@ -70,7 +86,7 @@ function skr_resource()
     wp_enqueue_script(
         'skr-main',
         get_theme_file_uri('/assets/js/main.js'),
-        array(), 
+        array(),
         false,
         true // 在页脚加载
     );
@@ -80,46 +96,71 @@ function skr_resource()
 //主题选项刷新
 //=================
 
-add_action('update_option','skr_update_option',10,3);
-function skr_update_option($option_name,$old_value,$new_value){
-
-}
+add_action('update_option', 'skr_update_option', 10, 3);
+function skr_update_option($option_name, $old_value, $new_value) {}
 
 //=================
 //个性化设置
 //=================
 // 取消工具栏
-add_filter('show_admin_bar', '__return_false'); 
+add_filter('show_admin_bar', '__return_false');
 
 //=================
 //主题数据处理
 //=================
 // 公安备案数字获取
-function skr_get_the_icp_number($icpinfo){
-    preg_match('/\d+/',$icpinfo, $icpNumber);
-    return esc_html(($icpNumber[0])) ;
+function skr_get_the_icp_number($icpinfo)
+{
+    preg_match('/\d+/', $icpinfo, $icpNumber);
+    return esc_html(($icpNumber[0]));
 }
 // 时间分段显示
-function skr_get_the_time(){
-    $pubTime =get_the_time('U');
-    $currTime = current_time('U');//获取当前时间戳
+function skr_get_the_time()
+{
+    $pubTime = get_the_time('U');
+    $currTime = current_time('U'); //获取当前时间戳
     $timeDiff = $currTime - $pubTime;
-    if($timeDiff < 60){
-        $displayTime = '刚刚';//小于60s
-    }elseif($timeDiff < 60*60){
-        $displayTime = floor(($timeDiff/60)).'分钟前';//小于60分钟
-    }elseif($timeDiff < 24*60*60){
-        $displayTime = floor(($timeDiff/60/60)).'小时前';//小于24小时
-    }elseif($timeDiff < 30*24*60*60){
-        $displayTime = floor(($timeDiff/24/60/60)).'日前';//小于30天
-    }elseif($timeDiff < 365*24*60*60){
-        $displayTime = date('m-d',$pubTime);//小于一年
-    }else{
-        $displayTime = date('Y-m-d',$pubTime);
+    if ($timeDiff < 60) {
+        $displayTime = '刚刚'; //小于60s
+    } elseif ($timeDiff < 60 * 60) {
+        $displayTime = floor(($timeDiff / 60)) . '分钟前'; //小于60分钟
+    } elseif ($timeDiff < 24 * 60 * 60) {
+        $displayTime = floor(($timeDiff / 60 / 60)) . '小时前'; //小于24小时
+    } elseif ($timeDiff < 30 * 24 * 60 * 60) {
+        $displayTime = floor(($timeDiff / 24 / 60 / 60)) . '日前'; //小于30天
+    } elseif ($timeDiff < 365 * 24 * 60 * 60) {
+        $displayTime = date('m-d', $pubTime); //小于一年
+    } else {
+        $displayTime = date('Y-m-d', $pubTime);
     }
     return esc_html($displayTime);
 }
-function skr_the_time(){
+function skr_the_time()
+{
     echo skr_get_the_time();
 }
+
+//=================
+//小脚本
+//=================
+// 前端分页跳转到文章列表位置
+function custom_pagination_script()
+{
+    if (is_front_page() && is_paged()) {
+?>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // 滚动到文章列表位置
+                const contentSection = document.getElementById('module-title');
+                if (contentSection) {
+                    contentSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        </script>
+<?php
+    }
+}
+add_action('wp_footer', 'custom_pagination_script');
 ?>
