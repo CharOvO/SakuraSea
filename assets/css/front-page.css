@@ -1,0 +1,178 @@
+/*==== 样式 ====*/
+/* banner 顶部大图*/
+.banner {
+    width: 100vw;
+    height: 105vh;
+    /* backdrop-filter: blur(5px); */
+    background: linear-gradient(to bottom, #00000025 90%, #ffffff00 100%);
+    mask: linear-gradient(to bottom, #000 93%, #ffffff00 100%);
+    animation: bgBlur 15s infinite;
+}
+/* bannerTitle 顶部大图标题 */
+.banner-title {
+    position: absolute;
+    top: calc(50vh - 60px);
+    font-size: 8vw;
+    font-weight: 700;
+    color: #ffffffcc;
+    text-shadow: 0 0 25px #ffffff;
+    line-height: 120px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+
+}
+/* 下滑提示UI */
+.banner i {
+    position: absolute;
+    bottom: 60px;
+    left: calc(50% - 19px);
+    font-size: 40px;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+    animation: shakeY linear 2s infinite;
+}
+/* 主体容器 container */
+.container.front-page {
+    width: 90%;
+    max-width: 1550px;
+    margin: 0 auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: 75% 20%;
+    justify-content: center;
+    gap: 20px;
+}
+/* 通知栏 noticeBar */
+.notice-bar{
+    grid-column: 1 / span 2;
+    
+    width: calc(100% - 32px);
+    height: 50px;
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    line-height: 50px;
+    color: var(--font-color);
+    background-color: #ffffff99;
+    backdrop-filter: blur(1em);
+    border: solid 1px rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    box-shadow: 5px 12px -5px rgba(102, 68, 68, 0);
+}
+.notice-bar a{
+    color: var(--font-color);
+    display: flex;
+    justify-content:space-between;
+    align-content: center;
+}
+.notice-bar:hover{
+    transform: translate(-1px,-1px) ;
+    box-shadow: 5px 5px 10px #00000039;  
+}
+.notice-bar .notice-bar-title:hover,.notice-bar i:hover{
+    transition: all .3s ;
+    /* transform: scale(1.1); */
+    color: var(--font-color-link);
+    text-shadow: 0 0 20px var(--font-color-link);
+}
+.notice-bar .notice-bar-content{
+    text-align: center;
+    text-justify: center;
+    flex: 1;
+}
+.notice-bar .notice-bar-content:hover{
+    transition: all .3s;
+    /* transform: scale(1.1); */
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+.notice-bar i {
+    font-size: 1.6rem;
+    color: var(--font-color);
+    cursor: pointer;
+}
+/* 模块标题 moduleTitle */
+a.module-title{
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    margin-bottom: .5em;
+    background-color: #00000011;
+    backdrop-filter: blur(3px);
+    border-radius: 1rem;
+    transition: all 0.5s ease-in-out;
+}
+a.module-title,.module-title i{
+    font-size: 2.5rem;
+    /* text-shadow: 0 0 20px #ffffffcc; */
+}
+.module-title i {
+    font-size: 2.8rem;
+    font-weight: 700;
+    /* text-shadow: 0 0 20px #ffffffcc; */
+}
+a.module-title:hover{
+    transform: translateX(20px);
+    text-shadow: 0 0 20px #0000008c;
+}
+a.module-title:hover i{
+    display: inline-block;
+    color: var(--font-color-link);
+    animation: shake-rotate 0.5s;
+    text-shadow: 0 0 20px var(--font-color-link);
+}
+a.module-title::after {
+    display: none;
+    content: '\e8d0';
+    font-family: "iconfont";
+}
+a.module-title:hover::after{
+    display: inline-block;
+}
+/* 文章列表横板 */
+.post-list.front-page{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px 20px;
+}
+
+/*==== 动画样式 ====*/
+/* 模糊渐变 */
+@keyframes bgBlur {
+    0% {
+        backdrop-filter: blur(1em);
+    }
+
+    20%,
+    80% {
+        backdrop-filter: blur(0em);
+    }
+
+    100% {
+        backdrop-filter: blur(1em);
+    }
+}
+
+/* 上下抖动 */
+@keyframes shakeY {
+
+    0%,
+    100% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+@keyframes shake-rotate {
+    0%,50%,100%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(20deg);
+    }
+    75% {
+        transform: rotate(20deg);
+    }
+}

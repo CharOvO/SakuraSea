@@ -178,10 +178,36 @@ p{
 b,strong{
     color: var(--font-color-strong);
 }
-/* 超链接 */
+/* 文章超链接样式 */
 article a::after{
     content: '\e8d0';
     font-family: "iconfont";
+}
+
+article a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 25%;
+    /* 距离文字底部5px */
+    width: 100%;
+    height: 50%;
+    background: var(--font-color-link-hover);
+    filter: blur(5px);
+    transform: scaleX(0);
+    /* 初始宽度为0 */
+    transform-origin: right;
+    /* 悬停时从左向右展开 */
+    transition: transform 0.5s ease;
+    border-radius: 40%;
+    z-index: -1;
+}
+
+article a:hover::before {
+    transform: scaleX(1);
+    /* 悬停时完全展开 */
+    transform-origin: left;
+    /* 移出时从右向左收缩 */
 }
 /* 行内代码code */
 code{
