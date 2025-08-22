@@ -26,6 +26,7 @@
     /* 背景 */
     --bg-color-white: #fafafa;
     --bg-color-blur-white-cc: #ffffffe0;/* 模糊 */
+    --bg-color-blur-white: #ffffff99;
     --bg-color-white-de: #ffffffde;
     --bg-color-white-99: #ffffff75;
     /* 阴影 */
@@ -57,14 +58,18 @@
 /* 字体 */
 @font-face {
     font-family: 'XLWK';
-    src: url('https://cdn.sakura-sea.cn/font/LXGWWenKai-Medium.ttf') format('truetype');
+    src: 
+        url('https://cdn.sakura-sea.cn/font/LXGWWenKai-Medium.ttf') format('truetype'),
+        url('./assets/font/LXGWWenKai-Medium.ttf') format('truetype');;
     font-weight: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'MM';
-    src: url('https://cdn.sakura-sea.cn/font/MapleMono-NF-CN-Medium.ttf') format('truetype');
+    src: 
+        url('https://cdn.sakura-sea.cn/font/MapleMono-NF-CN-Medium.ttf') format('truetype'),
+        url('./assets/font/MapleMono-NF-CN-Medium.ttf') format('truetype');
     font-weight: normal;
     font-display: swap;
 }

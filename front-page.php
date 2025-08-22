@@ -5,8 +5,11 @@
  *
  * @package SakuraSea
  * @author Char
+ *测试数据
  */
+$catList = array(210, 219, 220, 221, 222, 223);
 ?>
+
 <?php get_header() ?>
 <!--  banner  -->
 <div class="banner">
@@ -31,7 +34,7 @@
 <!-- 容器 -->
 <div class="container front-page">
     <!-- 主要内容 -->
-     <!-- 通知栏 -->
+    <!-- 通知栏 -->
     <div class="notice-bar front-page">
         <a href="#">
             <div class="notice-bar-title">即刻</div>
@@ -41,10 +44,40 @@
             </div>
             <i class="iconfont icon-right-btn-fill"></i>
         </a>
-        
+
     </div>
+    <!-- 分栏1 -->
     <main class="main-content front-page">
-        <!-- 文章列表 -->
+        <!-- 热门分类 -->
+        <div class="category-box front-page">
+            <!-- 循环遍历输出 -->
+            <?php for ($i = 0; $i <= 5; $i++) : ?>
+                <?php $cat = $catList[$i]; ?>
+                <a href="<?php echo get_category_link($cat); ?>">
+                    <div class="category-box-item front-page">
+                        <span class="category-name front-page"><?php echo get_category($cat)->name; ?></span>
+                        <i class="iconfont icon-right-btn-fill"></i>
+                    </div>
+                </a>
+            <?php endfor ?>
+            <!-- 查看更多分类 -->
+            <div class="read-more"><a href="<?php echo esc_url(bloginfo('url') . '/category') ?>" target="_self">
+                    <div class="roll-box">
+                        <i class="iconfont icon-all"></i>
+                        <div>查看更多</div>
+                    </div>
+                </a></div>
+        </div>
+        <!-- 热门 -->
+        <!-- 标题 title -->
+        <a id="module-title" class="hot-posts-bar-title module-title" href="#" target="_self" rel="noopener"><i class="iconfont icon-time-task"></i>热门</a>
+        <!-- 开源 -->
+        <!-- 标题 title -->
+        <a id="module-title" class="hot-posts-bar-title module-title" href="#" target="_self" rel="noopener"><i class="iconfont icon-time-task"></i>开源项目</a>
+        <!-- 主题 -->
+        <!-- 标题 title -->
+        <a id="module-title" class="hot-posts-bar-title module-title" href="#" target="_self" rel="noopener"><i class="iconfont icon-time-task"></i>信息差</a>
+        <!-- 最新更新列表 -->
         <!-- 标题 title -->
         <a id="module-title" class="new-posts-list-title module-title" href="#" target="_self" rel="noopener"><i class="iconfont icon-time-task"></i>最新文章</a>
         <div class="post-list front-page">

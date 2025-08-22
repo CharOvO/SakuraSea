@@ -22,7 +22,14 @@ $final_thumbnail = $thumbnail_url ? $thumbnail_url : $default_thumbnail;
     </div>
 
     <div class="post-meta list">
-        <div class="post-title list">『<?php the_title(); ?>』</div>
+        <div class="post-title list">『
+            <?php 
+                if(mb_strlen(get_the_title()) <= 25){
+                    the_title();
+                } else {
+                   echo esc_html(wp_trim_words(get_the_title(),25));
+                }
+            ?>』</div>
         <!-- <div class="post-description"><?php the_excerpt(); ?></div> -->
         <div class="post-meta-info list">
             <time class="meta-time list" datetime="<?php echo get_the_date('c'); ?>"><i class="iconfont icon-calendar"></i><?php skr_the_time('Y-m-d'); ?></time>

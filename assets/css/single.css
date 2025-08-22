@@ -64,6 +64,7 @@ h1.post-title.single {
     align-content: center;
     width: 80%;
     min-width: 800px;
+    min-height: 500px;
     margin: auto;
     padding: 4rem 3rem 3rem 3rem;
     background-color: var(--bg-color-blur-white-cc);
