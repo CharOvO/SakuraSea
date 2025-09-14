@@ -10,7 +10,7 @@
 
 <?php
 // 获取特色图片 URL，如果没有则使用默认图片
-$thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+$thumbnail_url = get_the_post_thumbnail_url(get_the_ID());
 $default_thumbnail = get_template_directory_uri() . '/assets/img/logo.png'; // 默认图片路径
 $final_thumbnail = $thumbnail_url ? $thumbnail_url : $default_thumbnail;
 ?>
@@ -22,8 +22,8 @@ $final_thumbnail = $thumbnail_url ? $thumbnail_url : $default_thumbnail;
     </div>
 
     <div class="post-meta list">
-        <div class="post-title list">『
-            <?php 
+        <div class="post-title list">
+            『<?php 
                 if(mb_strlen(get_the_title()) <= 25){
                     the_title();
                 } else {
