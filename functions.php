@@ -72,6 +72,13 @@ function skr_resource()
         false,
         'all'
     );
+    wp_enqueue_style(
+        'skr-post',
+        get_theme_file_uri('/assets/css/post.css'),
+        array(),
+        false,
+        'all'
+    );
 
     // 2. 加载ICON FONT（CDN资源）
     wp_enqueue_style(
@@ -163,4 +170,13 @@ function custom_pagination_script()
     }
 }
 add_action('wp_footer', 'custom_pagination_script');
+
+//=================
+//日志输出
+//=================
+//外部输出
+function skr_print ($str){
+    date_default_timezone_set('Asia/Shanghai');
+    echo('<div><span style="color:#ff7c7c">[skr]['. date('Y-m-d') . '][' . date('H:i:s') . ']</span>'. esc_html($str) .'</div>');
+}
 ?>
