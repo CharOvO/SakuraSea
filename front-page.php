@@ -8,6 +8,7 @@
  *测试数据
  */
 $catList = array(210, 219, 220, 221, 222, 223);
+$hotPosts = array(1938, 1871, 1863, 1861, 163);
 ?>
 
 <?php get_header() ?>
@@ -68,18 +69,24 @@ $catList = array(210, 219, 220, 221, 222, 223);
                     </div>
                 </a></div>
         </div>
-        <!-- 热门 -->
+
+        <!-- 热门文章列表 -->
         <!-- 标题 title -->
-        <a id="module-title" class="hot-posts-bar-title module-title" href="#" target="_self" rel="noopener"><i class="iconfont icon-time-task"></i>热门</a>
-        <!-- 开源 -->
-        <!-- 标题 title -->
-        <a id="module-title" class="hot-posts-bar-title module-title" href="#" target="_self" rel="noopener"><i class="iconfont icon-time-task"></i>开源项目</a>
-        <!-- 主题 -->
-        <!-- 标题 title -->
-        <a id="module-title" class="hot-posts-bar-title module-title" href="#" target="_self" rel="noopener"><i class="iconfont icon-time-task"></i>信息差</a>
+        <div><a id="module-title" class="hot-posts-list-title module-title" href="#" target="_self" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri('/assets/img/icon-hot.png')) ?>" alt="热门文章">最新文章</a></div>
+        <div class="post-bar front-page">
+            <?php
+            if (!empty($hotPosts)) {
+                foreach ($hotPosts as $post_id) {
+                    $post = get_post($post_id);
+                    setup_postdata($post);
+                    get_template_part('template-parts/posts','num');
+                }
+            }
+            ?>
+        </div>
         <!-- 最新更新列表 -->
         <!-- 标题 title -->
-        <a id="module-title" class="new-posts-list-title module-title" href="#" target="_self" rel="noopener"><i class="iconfont icon-time-task"></i>最新文章</a>
+        <div><a id="module-title" class="new-posts-list-title module-title" href="#" target="_self" rel="noopener"><img src="<?php echo esc_url(get_theme_file_uri('/assets/img/icon-time.png')) ?>" alt="最新文章">最新文章</a></div>
         <div class="post-list front-page">
             <?php
             if (have_posts()) {
@@ -87,6 +94,7 @@ $catList = array(210, 219, 220, 221, 222, 223);
                     the_post();
                     get_template_part('template-parts/posts');
                 };
+                wp_reset_postdata();
             };
             ?>
         </div>

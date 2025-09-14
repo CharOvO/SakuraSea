@@ -109,7 +109,7 @@
     width: 100%;
     height: 55px;
     padding: 0 20px;
-    background-color: #ffffffa6;
+    background-color: var(--bg-color-blur-white-inner);
     border-radius: 1rem;
     border: solid 1px var(--font-color-link);
     box-shadow: 1px 2px 5px rgba(118, 191, 255, 0.4);
@@ -177,13 +177,13 @@ a.module-title{
     border-radius: 1rem;
     transition: all 0.5s ease-in-out;
 }
-a.module-title,.module-title i{
+a.module-title,.module-title img{
     font-size: 2.5rem;
     /* text-shadow: 0 0 20px #ffffffcc; */
 }
-.module-title i {
-    font-size: 2.8rem;
-    font-weight: 700;
+.module-title img {
+    height: 40px;
+    width: auto;
     /* text-shadow: 0 0 20px #ffffffcc; */
 }
 a.module-title:hover{
@@ -204,13 +204,26 @@ a.module-title::after {
 a.module-title:hover::after{
     display: inline-block;
 }
-/* 文章列表横板 */
+
+/* 热门文章 */
+.post-bar.front-page{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/* 文章列表 */
 .post-list.front-page{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 15px 20px;
 }
+
+
+
 
 /*==== 动画样式 ====*/
 /* 模糊渐变 */
